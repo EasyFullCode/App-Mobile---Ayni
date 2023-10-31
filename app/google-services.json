@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "684420347539",
+    "project_id": "proyectoayni-3eb0d",
+    "storage_bucket": "proyectoayni-3eb0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684420347539:android:70eb2150502f08de1f7f66",
+        "android_client_info": {
+          "package_name": "com.example.proyectoayni"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9z8Wk2vyMM1KXubmpS_1I1yLD8F8IjiU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

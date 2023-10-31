@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_figma"
+    tools:context=".InicioSesionActivity">
+
+
+    <TextView
+
+        android:layout_width="230dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="356dp"
+        android:text="Ingresa tu Correo"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+
+        android:id="@+id/textView10"
+        android:layout_width="155dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="288dp"
+        android:text="INICIAR SESIÓN"
+        android:textColor="@color/btnAyni"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textSize="22sp"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/loginCorreo"
+        android:layout_width="340dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="396dp"
+        android:background="@drawable/border_edt"
+        android:hint="Correo"
+        android:paddingLeft="15dp"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+
+        android:layout_width="230dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="464dp"
+        android:text="Ingresa tu contraseña"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/loginContraseña"
+        android:layout_width="340dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="512dp"
+        android:background="@drawable/border_edt"
+        android:hint="Contraseña"
+        android:inputType="numberPassword"
+        android:paddingLeft="15dp"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnIngresoSesion"
+        android:layout_width="329dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="584dp"
+        android:backgroundTint="@color/btnAyni"
+        android:onClick="inicioSesion"
+        android:text="Ingresar"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="672dp"
+        android:text="¿No tienes cuenta?"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="127dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="656dp"
+        android:backgroundTint="@color/btnAyni"
+        android:text="Registrarse"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.869"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

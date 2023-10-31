@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_register"
+    tools:context=".RegistroActivity">
+
+
+    <TextView
+
+        android:layout_width="230dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="304dp"
+        android:text="Registra un correo"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+
+        android:id="@+id/textView14"
+        android:layout_width="150dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="224dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="REGISTRO"
+        android:textColor="@color/btnAyni"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.579"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtCorreo"
+        android:layout_width="340dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="352dp"
+        android:background="@drawable/border_edt"
+        android:hint="Correo"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="15dp"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+
+        android:layout_width="230dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="428dp"
+        android:text="Crea una contraseña"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtContraseña"
+        android:layout_width="340dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="476dp"
+        android:background="@drawable/border_edt"
+        android:hint="Contraseña"
+        android:inputType="numberPassword"
+        android:paddingLeft="15dp"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="328dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="644dp"
+        android:backgroundTint="@color/btnAyni"
+        android:onClick="registrarUsuario"
+        android:text="Registrarse"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
