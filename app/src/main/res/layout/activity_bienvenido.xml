@@ -4,81 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_welcome"
     tools:context=".BienvenidoActivity">
 
 
-
-    <View
-
-        android:layout_width="match_parent"
-        android:layout_height="92dp"
-        android:background="@color/btnAyni"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBaseline_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
     <TextView
 
-        android:layout_width="149dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="32dp"
-        android:text="Bienvenido"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        app:layout_constraintBaseline_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.671"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-
-        android:layout_width="320dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="136dp"
+        android:layout_width="346dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="452dp"
         android:text="Gracias por ser parte de Ayni"
-        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textColor="@color/btnAyni"
+        android:textSize="32sp"
         app:layout_constraintBaseline_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-
-        android:layout_width="86dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBaseline_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_ayni" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="217dp"
-        android:layout_height="340dp"
-        android:layout_marginTop="180dp"
-        app:layout_constraintBaseline_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/vector_bienvenido" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="157dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="292dp"
-        android:text="Recuerda ingresar con el correo y contraseña registrado.No lo olvides."
+        android:layout_width="315dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="552dp"
+        android:text="Recuerda ingresar con el correo y contraseña registrado. No lo olvides."
         android:textSize="18sp"
         app:layout_constraintBaseline_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintHorizontal_bias="0.656"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,12 +40,12 @@
         android:id="@+id/btnWelcome"
         android:layout_width="268dp"
         android:layout_height="49dp"
-        android:layout_marginTop="580dp"
-        android:text="Entendido"
+        android:layout_marginTop="632dp"
         android:backgroundTint="@color/btnAyni"
+        android:text="Entendido"
         app:layout_constraintBaseline_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

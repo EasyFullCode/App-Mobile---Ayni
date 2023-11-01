@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_figma"
+    android:background="@drawable/fondo_login"
     tools:context=".InicioSesionActivity">
 
 
@@ -26,15 +26,15 @@
         android:id="@+id/textView10"
         android:layout_width="155dp"
         android:layout_height="29dp"
-        android:layout_marginTop="288dp"
+        android:layout_marginTop="300dp"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="INICIAR SESIÓN"
         android:textColor="@color/btnAyni"
-        android:textStyle="bold"
-        android:fontFamily="sans-serif-condensed-medium"
         android:textSize="22sp"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

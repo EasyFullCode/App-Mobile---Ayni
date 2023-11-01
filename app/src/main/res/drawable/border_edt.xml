@@ -4,8 +4,8 @@
         <shape android:shape="rectangle">
             <solid android:color="#fff" /> <!-- Color de fondo del EditText -->
             <stroke
-                android:width="0.7dp"
-                android:color="#fff" />
+                android:width="2dp"
+                android:color="#98A5E8" />
             <corners android:radius="200dp" /> <!-- Radio de las esquinas del borde -->
         </shape>
     </item>
