@@ -37,11 +37,18 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         ImageButton botonChaleco = view.findViewById(R.id.btnChaleco);
+        ImageButton botonAudifono = view.findViewById(R.id.btnAudifono);
 
         botonChaleco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.nav_gallery);
+            }
+        });
+        botonAudifono.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.nav_audifonos);
             }
         });
     }

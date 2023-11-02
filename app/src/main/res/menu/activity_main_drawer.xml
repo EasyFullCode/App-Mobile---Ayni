@@ -8,14 +8,26 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/home_24px"
-            android:title="Inicio" />
+            android:title="Inicio"/>
         <item
             android:id="@+id/nav_perfil"
             android:icon="@drawable/account_circle_24px"
             android:title="Mi Perfil" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_intercambios"
             android:icon="@drawable/partner_exchange_24px"
             android:title="Mis Intercambios" />
+        <item
+            android:id="@+id/nav_publicar"
+            android:icon="@drawable/post_add_24px"
+            android:title="Publicar" />
+        <item
+            android:id="@+id/nav_categorias"
+            android:icon="@drawable/category_24px"
+            android:title="Categorias" />
+        <item
+            android:id="@+id/nav_acerca"
+            android:icon="@drawable/contact_support_24px"
+            android:title="Acerca de AYNI" />
     </group>
 </menu>

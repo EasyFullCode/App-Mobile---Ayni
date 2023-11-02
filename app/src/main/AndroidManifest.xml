@@ -6,6 +6,9 @@
     <uses-permission
         android:name="com.google.android.gms.permission.AD_ID"
         tools:node="remove" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
 
     <application
         android:allowBackup="true"
@@ -17,9 +20,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoAyni"
         tools:targetApi="31">
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
         <activity
             android:name=".MenuAyni"
             android:exported="false"

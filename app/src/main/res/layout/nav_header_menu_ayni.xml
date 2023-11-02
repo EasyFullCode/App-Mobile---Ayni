@@ -14,17 +14,18 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="142dp"
-        android:layout_height="94dp"
+        android:layout_width="144dp"
+        android:layout_height="84dp"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         app:srcCompat="@drawable/icon_ayni" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="129dp"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="AYNI"
+        android:textSize="18sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView

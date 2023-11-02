@@ -16,12 +16,15 @@
         <action
             android:id="@+id/action_nav_home_to_nav_slideshow"
             app:destination="@id/nav_perfil" />
+        <action
+            android:id="@+id/action_nav_home_to_audifonosFragment"
+            app:destination="@id/nav_audifonos" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.proyectoayni.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="Chaleco Negro"
         tools:layout="@layout/fragment_gallery" >
         <action
             android:id="@+id/action_nav_gallery_to_nav_home"
@@ -32,5 +35,32 @@
         android:id="@+id/nav_perfil"
         android:name="com.example.proyectoayni.ui.slideshow.SlideshowFragment"
         android:label="Mi perfil"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_nav_perfil_to_intercambiosFragment"
+            app:destination="@id/nav_intercambios" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_audifonos"
+        android:name="com.example.proyectoayni.AudifonosFragment"
+        android:label="Audifonos"
+        tools:layout="@layout/fragment_audifonos" >
+        <action
+            android:id="@+id/action_audifonosFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_intercambios"
+        android:name="com.example.proyectoayni.IntercambiosFragment"
+        android:label="Mis Intercambios"
+        tools:layout="@layout/fragment_intercambios" >
+        <action
+            android:id="@+id/action_nav_intercambios_to_publicarFragment"
+            app:destination="@id/nav_publicar" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_publicar"
+        android:name="com.example.proyectoayni.PublicarFragment"
+        android:label="Publicar producto"
+        tools:layout="@layout/fragment_publicar" />
 </navigation>
