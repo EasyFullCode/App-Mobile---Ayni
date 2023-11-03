@@ -1,116 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_menu"
+    android:background="@drawable/fondo_producto"
     tools:context=".ui.home.HomeFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/btnChaleco"
-        android:layout_width="169dp"
-        android:layout_height="187dp"
-        android:contentDescription="Chaleco"
-        android:src="@drawable/chaleco"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.327" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sugerencias de hoy"
+            android:textSize="24sp"
+            android:layout_marginBottom="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Considera el valor estimado, si crees que tu producto tiene un valor similar, consulta al usuario para un intercambio. "
+            android:textSize="18sp"
+            android:layout_marginBottom="15dp"/>
+
+        <ImageButton
+            android:id="@+id/btnChaleco"
+            android:layout_width="369dp"
+            android:layout_height="211dp"
+            android:contentDescription="Chaleco"
+            android:src="@drawable/chaleco" />
+
+        <TextView
+            android:layout_width="387dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text=" S/30 - Chaleco Varón"
+            android:textAlignment="center"
+            android:textSize="18sp" />
 
     <ImageButton
         android:id="@+id/btnAudifono"
-        android:layout_width="169dp"
-        android:layout_height="187dp"
+        android:layout_width="369dp"
+        android:layout_height="211dp"
         android:contentDescription="Audifonos"
         android:src="@drawable/airpods"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.933"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.327" />
+         />
 
-    <ImageButton
-        android:id="@+id/btnZapatilla"
-        android:layout_width="169dp"
-        android:layout_height="187dp"
-        android:contentDescription="zapatilla"
-        android:src="@drawable/zapatilla"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.841" />
+        <TextView
+            android:layout_width="380dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text=" S/40 - Audifonos"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/btnZapatilla"
+            android:layout_width="380dp"
+            android:layout_height="211dp"
+            android:contentDescription="zapatilla"
+            android:src="@drawable/zapatilla" />
+
+        <TextView
+            android:layout_width="371dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text=" S/60 - Zapatilla Nike"
+            android:textAlignment="center"
+            android:textSize="18sp" />
 
     <ImageButton
         android:id="@+id/btnMouse"
-        android:layout_width="169dp"
-        android:layout_height="187dp"
+        android:layout_width="380dp"
+        android:layout_height="211dp"
         android:contentDescription="mouse"
         android:src="@drawable/mouse"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.933"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.841" />
+        />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" S/65 - Mouse "
-        android:fontFamily="sans-serif-condensed"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.878"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.943" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" S/40 - Audifonos"
-        android:fontFamily="sans-serif-condensed"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.901"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.562" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" S/60 - Zapatilla Nike"
-        android:fontFamily="sans-serif-condensed"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.943" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" S/30 - Chaleco Varón"
-        android:fontFamily="sans-serif-condensed"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.562" />
+        <TextView
+            android:layout_width="373dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text=" S/65 - Mouse "
+            android:textAlignment="center"
+            android:textSize="18sp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

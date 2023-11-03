@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp"
+    tools:context=".CategoriasFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Aquí puedes agregar tus ImageButton -->
+
+        <ImageButton
+            android:id="@+id/IbtnArtefactos"
+            android:layout_width="369dp"
+            android:layout_height="211dp"
+            android:contentDescription="Descripción de la imagen 1"
+            android:src="@drawable/electronicos" />
+
+        <TextView
+            android:layout_width="367dp"
+            android:layout_height="wrap_content"
+            android:text="Artefactos Electronicos"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+
+        <ImageButton
+            android:id="@+id/IbtnAntiguo"
+            android:layout_width="369dp"
+            android:layout_height="211dp"
+            android:src="@drawable/reloj"
+            android:contentDescription="Descripción de la imagen 2" />
+        <TextView
+            android:layout_width="367dp"
+            android:layout_height="wrap_content"
+            android:text="Antigüedades"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+
+        <ImageButton
+            android:id="@+id/IbtnRopa"
+            android:layout_width="369dp"
+            android:layout_height="211dp"
+            android:src="@drawable/ropa"
+            android:contentDescription="Descripción de la imagen 2" />
+        <TextView
+            android:layout_width="367dp"
+            android:layout_height="wrap_content"
+            android:text="Ropa y Accesorios"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+        <ImageButton
+            android:id="@+id/IbtnMuebles"
+            android:layout_width="369dp"
+            android:layout_height="211dp"
+            android:src="@drawable/muebles"
+            android:contentDescription="Descripción de la imagen 2" />
+        <TextView
+            android:layout_width="367dp"
+            android:layout_height="wrap_content"
+            android:text="Muebles"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+        <ImageButton
+            android:id="@+id/IbtnJuguetes"
+            android:layout_width="369dp"
+            android:layout_height="211dp"
+            android:src="@drawable/juguetes"
+            android:contentDescription="Descripción de la imagen 2" />
+        <TextView
+            android:layout_width="367dp"
+            android:layout_height="wrap_content"
+            android:text="Juguetes"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+        <ImageButton
+            android:id="@+id/IbtnJoyas"
+            android:layout_width="369dp"
+            android:layout_height="211dp"
+            android:src="@drawable/joyas"
+            android:contentDescription="Descripción de la imagen 2" />
+        <TextView
+            android:layout_width="367dp"
+            android:layout_height="wrap_content"
+            android:text="Joyas para hombre y mujer"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

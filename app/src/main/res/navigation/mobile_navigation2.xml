@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_nav_home_to_audifonosFragment"
             app:destination="@id/nav_audifonos" />
+        <action
+            android:id="@+id/action_nav_home_to_categoriasFragment"
+            app:destination="@id/nav_categorias" />
     </fragment>
 
     <fragment
@@ -63,4 +66,18 @@
         android:name="com.example.proyectoayni.PublicarFragment"
         android:label="Publicar producto"
         tools:layout="@layout/fragment_publicar" />
+    <fragment
+        android:id="@+id/nav_categorias"
+        android:name="com.example.proyectoayni.CategoriasFragment"
+        android:label="Categorias | AYNI"
+        tools:layout="@layout/fragment_categorias" >
+        <action
+            android:id="@+id/action_nav_categorias_to_electronicoFragment"
+            app:destination="@id/nav_electronico" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_electronico"
+        android:name="com.example.proyectoayni.ElectronicoFragment"
+        android:label="Artefactos Electrónicos"
+        tools:layout="@layout/fragment_electronico" />
 </navigation>
