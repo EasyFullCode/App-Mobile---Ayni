@@ -1,5 +1,7 @@
 package com.example.proyectoayni;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,17 +12,18 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.Button;
+import android.widget.Toast;
 
-import com.example.proyectoayni.databinding.FragmentCategoriasBinding;
-import com.example.proyectoayni.databinding.FragmentHomeBinding;
+import com.example.proyectoayni.databinding.FragmentAudifonosBinding;
+import com.example.proyectoayni.databinding.FragmentTabletBinding;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link CategoriasFragment#newInstance} factory method to
+ * Use the {@link TabletFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CategoriasFragment extends Fragment {
+public class TabletFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,10 +33,10 @@ public class CategoriasFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private FragmentCategoriasBinding binding;
 
+    private FragmentTabletBinding binding;
 
-    public CategoriasFragment() {
+    public TabletFragment() {
         // Required empty public constructor
     }
 
@@ -43,11 +46,11 @@ public class CategoriasFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment CategoriasFragment.
+     * @return A new instance of fragment TabletFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static CategoriasFragment newInstance(String param1, String param2) {
-        CategoriasFragment fragment = new CategoriasFragment();
+    public static TabletFragment newInstance(String param1, String param2) {
+        TabletFragment fragment = new TabletFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,29 +70,45 @@ public class CategoriasFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        binding = FragmentTabletBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        Button whatsappButton = root.findViewById(R.id.whatsappButton);
+        whatsappButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Número de teléfono al que se enviará el mensaje por WhatsApp
+                String phoneNumber = "931561797";
+
+                // Mensaje opcional a enviar
+                String message = "Hola desde mi app";
+
+                try {
+                    // Crear la intención para abrir WhatsApp
+                    String url = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + message;
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(intent);
+                } catch (Exception e) {
+                    // Manejar excepciones si WhatsApp no está instalado en el dispositivo
+                    Toast.makeText(getContext(), "WhatsApp no está instalado en este dispositivo", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_categorias, container, false);
+        return root;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ImageButton botonArtefacto = view.findViewById(R.id.IbtnArtefactos);
-        ImageButton botonRopa = view.findViewById(R.id.IbtnRopa);
+        Button botonVolver = view.findViewById(R.id.btnVolver);
 
-        botonArtefacto.setOnClickListener(new View.OnClickListener() {
+        botonVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.nav_electronico);
             }
         });
-
-        botonRopa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.ropaFragment);
-            }
-        });
-
     }
 }

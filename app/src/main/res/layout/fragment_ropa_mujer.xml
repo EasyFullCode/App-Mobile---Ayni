@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_producto"
+    tools:context=".RopaMujerFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/btnChaqueta"
+            android:layout_width="369dp"
+            android:layout_height="211dp"
+            android:contentDescription="Chaqueta de Mujer"
+            android:src="@drawable/chaqueta_mujer" />
+
+        <TextView
+            android:layout_width="387dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text=" S/60 - Chaqueta Mujer"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/btnPoleraMujer"
+            android:layout_width="369dp"
+            android:layout_height="211dp"
+            android:contentDescription="Polera Mujer"
+            android:src="@drawable/polera_mujer"
+            />
+
+        <TextView
+            android:layout_width="380dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text=" S/50 - Polera Mujer"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <ImageButton
+
+            android:layout_width="380dp"
+            android:layout_height="211dp"
+            android:contentDescription="Falda"
+            android:src="@drawable/falda" />
+
+        <TextView
+            android:layout_width="371dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text=" S/35 - Falda Mujer"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <ImageButton
+
+            android:layout_width="380dp"
+            android:layout_height="211dp"
+            android:contentDescription="Jeang Mujer"
+            android:src="@drawable/jeang_mujer"
+            />
+
+        <TextView
+            android:layout_width="373dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text=" S/70 - Jeang Mujer "
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+</ScrollView>

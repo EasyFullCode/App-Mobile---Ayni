@@ -1,14 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_producto"
+    android:layout_margin="15dp"
     tools:context=".ElectronicoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+    <ImageButton
+        android:id="@+id/IbtnAudifono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/audifonos"
+        android:contentDescription="Audifono Gamer"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:text="S/50 - Audifonos Gamer"
+            android:textAlignment="center" />
+        <ImageButton
+            android:id="@+id/IbtnTablet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tablet"
+            android:contentDescription="Tablet"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:text="S/120 - Tablet para niños"
+            android:textAlignment="center" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/smartwatch"
+            android:contentDescription="SmartWatch"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:text="S/60 - SmartWatch"
+            android:textAlignment="center" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/teclado"
+            android:contentDescription="Audifonos"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:text="S/100 - Teclado Gamer"
+            android:textAlignment="center" />
+    </LinearLayout>
+</ScrollView>

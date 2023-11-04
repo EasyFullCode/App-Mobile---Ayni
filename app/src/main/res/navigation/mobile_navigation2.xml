@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_nav_home_to_categoriasFragment"
             app:destination="@id/nav_categorias" />
+        <action
+            android:id="@+id/action_nav_home_to_infoFragment"
+            app:destination="@id/nav_acerca" />
     </fragment>
 
     <fragment
@@ -74,10 +77,75 @@
         <action
             android:id="@+id/action_nav_categorias_to_electronicoFragment"
             app:destination="@id/nav_electronico" />
+        <action
+            android:id="@+id/action_nav_categorias_to_ropaFragment"
+            app:destination="@id/ropaFragment" />
     </fragment>
     <fragment
         android:id="@+id/nav_electronico"
         android:name="com.example.proyectoayni.ElectronicoFragment"
         android:label="Artefactos Electrónicos"
-        tools:layout="@layout/fragment_electronico" />
+        tools:layout="@layout/fragment_electronico" >
+        <action
+            android:id="@+id/action_nav_electronico_to_audiGamerFragment"
+            app:destination="@id/nav_audiGamer" />
+        <action
+            android:id="@+id/action_nav_electronico_to_tabletFragment"
+            app:destination="@id/tabletFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_audiGamer"
+        android:name="com.example.proyectoayni.AudiGamerFragment"
+        android:label="Audifono Gamer"
+        tools:layout="@layout/fragment_audi_gamer" />
+    <fragment
+        android:id="@+id/tabletFragment"
+        android:name="com.example.proyectoayni.TabletFragment"
+        android:label="Tablet para niñ@"
+        tools:layout="@layout/fragment_tablet" />
+    <fragment
+        android:id="@+id/ropaFragment"
+        android:name="com.example.proyectoayni.RopaFragment"
+        android:label="Sección Ropa"
+        tools:layout="@layout/fragment_ropa" >
+        <action
+            android:id="@+id/action_ropaFragment_to_ropaHombreFragment"
+            app:destination="@id/ropaHombreFragment" />
+        <action
+            android:id="@+id/action_ropaFragment_to_ropaMujerFragment"
+            app:destination="@id/ropaMujerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ropaHombreFragment"
+        android:name="com.example.proyectoayni.RopaHombreFragment"
+        android:label="Ropa para Hombre"
+        tools:layout="@layout/fragment_ropa_hombre" >
+        <action
+            android:id="@+id/action_ropaHombreFragment_to_gorraFragment"
+            app:destination="@id/gorraFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ropaMujerFragment"
+        android:name="com.example.proyectoayni.RopaMujerFragment"
+        android:label="Ropa para Mujer"
+        tools:layout="@layout/fragment_ropa_mujer" >
+        <action
+            android:id="@+id/action_ropaMujerFragment_to_chaquetaFragment"
+            app:destination="@id/chaquetaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chaquetaFragment"
+        android:name="com.example.proyectoayni.ChaquetaFragment"
+        android:label="Chaqueta para Mujer"
+        tools:layout="@layout/fragment_chaqueta" />
+    <fragment
+        android:id="@+id/gorraFragment"
+        android:name="com.example.proyectoayni.GorraFragment"
+        android:label="Gorra para Varón"
+        tools:layout="@layout/fragment_gorra" />
+    <fragment
+        android:id="@+id/nav_acerca"
+        android:name="com.example.proyectoayni.InfoFragment"
+        android:label="¿Quienes Somos?"
+        tools:layout="@layout/fragment_info" />
 </navigation>
