@@ -6,14 +6,26 @@ import android.os.Bundle;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,8 +37,15 @@ public class PublicarFragment extends Fragment {
     private ActivityResultLauncher<Intent> galleryLauncher;
 
     private static final int PICK_IMAGE_REQUEST = 1;
-    private Button btnOpenGallery;
+    private Button btnOpenGallery,botonPublicar;
     private View fragmentView;
+
+    private Spinner spinnerEstado;
+
+    private Spinner spinnerCategoria, spinnerEntrega, spinnerCambio ;
+
+    private EditText InputTitulo, InputContacto;
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -69,9 +88,89 @@ public class PublicarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+
+
         fragmentView = inflater.inflate(R.layout.fragment_publicar, container, false);
 
         btnOpenGallery = fragmentView.findViewById(R.id.btnOpenGallery);
+
+        botonPublicar = fragmentView.findViewById(R.id.btnPublicar);
+
+        InputTitulo = fragmentView.findViewById(R.id.edtTitle);
+
+        InputContacto = fragmentView.findViewById(R.id.edtCelular);
+
+        spinnerCategoria = fragmentView.findViewById(R.id.edtCategoriaProducto);
+
+        spinnerEstado = fragmentView.findViewById(R.id.edtEstado);
+
+        spinnerEntrega = fragmentView.findViewById(R.id.edtLugar);
+
+        spinnerCambio = fragmentView.findViewById(R.id.edtPreferencia);
+
+        ArrayAdapter<CharSequence> adapterCategoria = ArrayAdapter.createFromResource(requireContext(), R.array.edtCategoria, android.R.layout.simple_list_item_1);
+        adapterCategoria.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerCategoria.setAdapter(adapterCategoria);
+
+        ArrayAdapter<CharSequence> adapterEstado = ArrayAdapter.createFromResource(requireContext(), R.array.edtEstado, android.R.layout.simple_list_item_1);
+        adapterEstado.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerEstado.setAdapter(adapterEstado);
+
+        ArrayAdapter<CharSequence> adapterEntrega = ArrayAdapter.createFromResource(requireContext(), R.array.edtEntrega, android.R.layout.simple_list_item_1);
+        adapterEntrega.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerEntrega.setAdapter(adapterEntrega);
+
+        ArrayAdapter<CharSequence> adapterCambio = ArrayAdapter.createFromResource(requireContext(), R.array.edtPreferencia, android.R.layout.simple_list_item_1);
+        adapterCambio.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerCambio.setAdapter(adapterCambio);
+
+        spinnerCategoria.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String categoriaSeleccionada = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinnerEstado.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String estadoSeleccionado = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinnerCambio.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String PreferenciaCambioSeleccionado = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinnerEntrega.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String PreferenciaEntregaSeleccionado = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         btnOpenGallery.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +185,46 @@ public class PublicarFragment extends Fragment {
                     Uri selectedImageUri = data.getData();
                     handleImageSelection(selectedImageUri);
                 }
+            }
+        });
+
+        botonPublicar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(InputTitulo.getText().toString().trim().isEmpty()){
+                    Toast.makeText(requireContext(), "Llenar el campo Titulo", Toast.LENGTH_SHORT).show();
+                } else if (InputContacto.getText().toString().trim().isEmpty()) {
+                    Toast.makeText(requireContext(), "Llenar el campo Contacto", Toast.LENGTH_SHORT).show();
+                }else {
+                    String tituloProducto = InputTitulo.getText().toString();
+                    String categoria = spinnerCategoria.getSelectedItem().toString();
+                    String entrega = spinnerEntrega.getSelectedItem().toString();
+                    String contacto = InputContacto.getText().toString();
+                    String estado = spinnerEstado.getSelectedItem().toString();
+                    String cambio = spinnerCambio.getSelectedItem().toString();
+                }
+                FirebaseDatabase db = FirebaseDatabase.getInstance();
+                DatabaseReference dbref = db.getReference(Producto.class.getSimpleName());
+                dbref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Producto producto1 = new Producto();
+                        producto1.setTitulo(InputTitulo.getText().toString());
+                        producto1.setCategoria(spinnerCategoria.getSelectedItem().toString());
+                        producto1.setPreferencia_entrega(spinnerEntrega.getSelectedItem().toString());
+                        producto1.setContacto(InputContacto.getText().toString());
+                        producto1.setEstado_producto(spinnerEstado.getSelectedItem().toString());
+                        producto1.setPreferencia_cambio(spinnerCambio.getSelectedItem().toString());
+
+                        dbref.push().setValue(producto1);
+                        Toast.makeText(requireContext(), "Producto Registrado", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(requireContext(), "ERROR", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 
@@ -109,4 +248,7 @@ public class PublicarFragment extends Fragment {
 
         btnOpenGallery.setVisibility(View.GONE);
     }
+
+
+
 }

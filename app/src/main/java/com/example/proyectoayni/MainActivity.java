@@ -2,14 +2,17 @@ package com.example.proyectoayni;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.proyectoayni.ui.slideshow.SlideshowFragment;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -25,6 +28,7 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "FacebookLogin";
@@ -37,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Inicia Facebook
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_main);
 
@@ -75,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         // [END initialize_fblogin]
     }
 
+
     // [START on_start_check_user]
     @Override
     public void onStart() {
@@ -92,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Pass the activity result back to the Facebook SDK
         mCallbackManager.onActivityResult(requestCode, resultCode, data);
+
     }
     // [END on_activity_result]
 
@@ -125,9 +133,22 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseUser user1 = FirebaseAuth.getInstance().getCurrentUser();
         if (user1 != null){
-            String name = user.getDisplayName();
-            String email = user.getEmail();
-            Log.d(name,email + "Perro salchicha");
+            /*String name = user1.getDisplayName();
+            String photoUrl = user1.getPhotoUrl() != null ? user.getPhotoUrl().toString() : null;
+
+            // Crear un Bundle para pasar los datos al fragmento
+            Bundle bundle = new Bundle();
+            bundle.putString("name", name);
+            bundle.putString("photoUrl", photoUrl);
+
+            // Iniciar el fragmento y pasar los datos
+            SlideshowFragment slideshowFragment = new SlideshowFragment();
+            slideshowFragment.setArguments(bundle);
+
+            // Reemplazar el fragmento actual en el contenedor del NavigationDrawer
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container, slideshowFragment);
+            transaction.commit();*/
             Intent intent = new Intent(MainActivity.this, MenuAyni.class);
             startActivity(intent);
             finish();

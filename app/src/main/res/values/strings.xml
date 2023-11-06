@@ -9,6 +9,40 @@
     <string name="action_settings">Settings</string>
 
 
+    <string-array name="edtEstado">
+
+        <item>Nuevo</item>
+        <item>Poco Usado</item>
+        <item>Usado</item>
+    </string-array>
+
+    <string-array name="edtEntrega">
+
+        <item>Lugar Público</item>
+        <item>A Coordinar</item>
+    </string-array>
+
+    <string-array name="edtCategoria">
+
+        <item>Ropa y Accesorios</item>
+        <item>Artefactos Electronicos</item>
+        <item>Antigüedades</item>
+        <item>Muebles</item>
+        <item>Juguetes</item>
+        <item>Joyas</item>
+    </string-array>
+
+    <string-array name="edtPreferencia">
+
+        <item>Ropa y Accesorios</item>
+        <item>Artefactos Electronicos</item>
+        <item>Antigüedades</item>
+        <item>Muebles</item>
+        <item>Juguetes</item>
+        <item>Joyas</item>
+    </string-array>
+
+
     <string name="facebook_app_id">645821851010344</string>
     <string name="fb_login_protocol_scheme">fb1234</string>
     <string name="facebook_client_token">56789</string>

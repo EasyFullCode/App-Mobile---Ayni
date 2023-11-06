@@ -61,6 +61,7 @@
         app:layout_constraintVertical_bias="0.379" />
 
     <ListView
+        android:id="@+id/lstOne"
         android:layout_width="164dp"
         android:layout_height="251dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -71,6 +72,7 @@
         app:layout_constraintVertical_bias="0.634" />
 
     <ListView
+        android:id="@+id/lstTwo"
         android:layout_width="163dp"
         android:layout_height="249dp"
         app:layout_constraintBottom_toBottomOf="parent"

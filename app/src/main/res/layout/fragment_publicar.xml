@@ -35,7 +35,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Categoria"
+        android:text="Estado"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.62"
@@ -43,11 +43,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.696" />
 
-    <EditText
+    <Spinner
+        android:id="@+id/edtEstado"
         android:layout_width="158dp"
         android:layout_height="50dp"
         android:background="@drawable/border_edt"
-        android:hint="Ropa | Joyas"
         android:paddingLeft="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +59,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Estado"
+        android:text="Categoria"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.095"
@@ -68,6 +68,7 @@
         app:layout_constraintVertical_bias="0.431" />
 
     <EditText
+        android:id="@+id/edtTitle"
         android:layout_width="340dp"
         android:layout_height="50dp"
         android:background="@drawable/border_edt"
@@ -91,11 +92,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.564" />
 
-    <EditText
+    <Spinner
+        android:id="@+id/edtCategoriaProducto"
         android:layout_width="340dp"
         android:layout_height="50dp"
         android:background="@drawable/border_edt"
-        android:hint="Nuevo | Poco Uso | Usado"
         android:paddingLeft="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -115,11 +116,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.825" />
 
-    <EditText
+    <Spinner
+        android:id="@+id/edtLugar"
         android:layout_width="340dp"
         android:layout_height="50dp"
         android:background="@drawable/border_edt"
-        android:hint="Lugar Público | A coordinar"
         android:paddingLeft="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -140,6 +141,7 @@
         app:layout_constraintVertical_bias="0.696" />
 
     <EditText
+        android:id="@+id/edtCelular"
         android:layout_width="158dp"
         android:layout_height="50dp"
         android:background="@drawable/border_edt"
@@ -163,21 +165,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.307" />
 
-    <EditText
+    <Spinner
+        android:id="@+id/edtPreferencia"
         android:layout_width="340dp"
         android:layout_height="50dp"
         android:background="@drawable/border_edt"
-        android:hint="Ingrese un titulo"
         android:paddingLeft="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.907" />
+        app:layout_constraintVertical_bias="0.904" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnPublicar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/btnAyni"

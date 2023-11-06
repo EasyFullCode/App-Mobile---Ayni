@@ -37,15 +37,19 @@ android {
 
 dependencies {
 
+
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
     implementation("com.google.firebase:firebase-auth:22.2.0")
+    implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.navigation:navigation-fragment:2.7.4")
     implementation("androidx.navigation:navigation-ui:2.7.4")
+    implementation("com.google.firebase:firebase-database")
+    implementation ("com.squareup.picasso:picasso:2.71828")  // Versión actualizada de Picasso
     implementation("com.facebook.android:facebook-login:latest.release")
     implementation ("com.facebook.android:facebook-android-sdk:[8,9)")
     testImplementation("junit:junit:4.13.2")
