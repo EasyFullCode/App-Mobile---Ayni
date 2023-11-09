@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_producto"
+    android:background="@drawable/fondo_home"
     tools:context=".ui.home.HomeFragment">
 
     <LinearLayout
@@ -17,6 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sugerencias de hoy"
+            android:textColor="@color/btnAyni"
             android:textSize="24sp"
             android:layout_marginBottom="15dp"/>
         <TextView
@@ -34,13 +35,15 @@
             android:src="@drawable/chaleco" />
 
         <TextView
-            android:layout_width="387dp"
+            android:layout_width="368dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
+            android:background="@color/btnAyni"
             android:fontFamily="sans-serif-condensed"
             android:text=" S/30 - Chaleco Varón"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="18sp" />
 
     <ImageButton
@@ -52,12 +55,14 @@
          />
 
         <TextView
-            android:layout_width="380dp"
-            android:layout_height="23dp"
+            android:layout_width="371dp"
+            android:layout_height="25dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
             android:fontFamily="sans-serif-condensed"
             android:text=" S/40 - Audifonos"
+            android:background="@color/btnAyni"
+            android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="18sp" />
 
@@ -73,6 +78,8 @@
             android:layout_height="26dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
+            android:background="@color/btnAyni"
+            android:textColor="@color/white"
             android:fontFamily="sans-serif-condensed"
             android:text=" S/60 - Zapatilla Nike"
             android:textAlignment="center"

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_producto"
+    android:background="@drawable/fondo_home"
     android:layout_margin="15dp"
     tools:context=".ElectronicoFragment">
 
@@ -22,6 +22,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="29dp"
+            android:background="@color/btnAyni"
+            android:textColor="@color/white"
             android:text="S/50 - Audifonos Gamer"
             android:textAlignment="center" />
         <ImageButton
@@ -34,6 +36,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="29dp"
+            android:background="@color/btnAyni"
+            android:textColor="@color/white"
             android:text="S/120 - Tablet para niños"
             android:textAlignment="center" />
         <ImageButton
@@ -45,6 +49,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="29dp"
+            android:background="@color/btnAyni"
+            android:textColor="@color/white"
             android:text="S/60 - SmartWatch"
             android:textAlignment="center" />
         <ImageButton
@@ -56,6 +62,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="29dp"
+            android:background="@color/btnAyni"
+            android:textColor="@color/white"
             android:text="S/100 - Teclado Gamer"
             android:textAlignment="center" />
     </LinearLayout>

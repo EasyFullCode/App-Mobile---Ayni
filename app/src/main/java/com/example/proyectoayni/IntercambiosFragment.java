@@ -10,7 +10,18 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +38,10 @@ public class IntercambiosFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private View fragmentView;
+
+    private ListView listauno, listados;
 
     public IntercambiosFragment() {
         // Required empty public constructor
@@ -53,10 +68,14 @@ public class IntercambiosFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
@@ -76,8 +95,57 @@ public class IntercambiosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_intercambios, container, false);
+
+        fragmentView = inflater.inflate(R.layout.fragment_intercambios,container,false);
+
+        listauno = fragmentView.findViewById(R.id.lstOne);
+        listados = fragmentView.findViewById(R.id.lstTwo);
+
+
+
+        listarProducto();
+        listarEstado();
+
+        return fragmentView;
     }
 
+
+    public void listarProducto(){
+
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference dbref = db.getReference(Producto.class.getSimpleName());
+
+        ArrayList<Producto> listaProducto = new ArrayList<>();
+        ArrayAdapter<Producto> productoAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, listaProducto);
+        listauno.setAdapter(productoAdapter);
+
+        dbref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                listaProducto.clear(); // Limpia la lista antes de agregar los nuevos títulos
+                for (DataSnapshot productoSnapshot : dataSnapshot.getChildren()) {
+                    Producto producto = productoSnapshot.getValue(Producto.class);
+                    if (producto != null) {
+                        listaProducto.add(producto);
+                    }
+                }
+                productoAdapter.notifyDataSetChanged(); // Notifica al adaptador que los datos han cambiado
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Maneja los errores si es necesario
+            }
+        });
+
+
+    }
+
+    public void listarEstado(){
+
+        ArrayAdapter<CharSequence> listaEstado = ArrayAdapter.createFromResource(requireContext(),R.array.estadoProducto, android.R.layout.simple_list_item_1);
+        listados.setAdapter(listaEstado);
+
+
+    }
 }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_home"
     android:layout_margin="15dp"
     tools:context=".CategoriasFragment">
 
@@ -25,6 +26,8 @@
             android:layout_width="367dp"
             android:layout_height="wrap_content"
             android:text="Artefactos Electronicos"
+            android:background="@color/btnAyni"
+            android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="18sp"
             android:layout_marginTop="15dp"
@@ -39,6 +42,8 @@
         <TextView
             android:layout_width="367dp"
             android:layout_height="wrap_content"
+            android:background="@color/btnAyni"
+            android:textColor="@color/white"
             android:text="Antigüedades"
             android:textAlignment="center"
             android:textSize="18sp"
@@ -54,6 +59,8 @@
         <TextView
             android:layout_width="367dp"
             android:layout_height="wrap_content"
+            android:background="@color/btnAyni"
+            android:textColor="@color/white"
             android:text="Ropa y Accesorios"
             android:textAlignment="center"
             android:textSize="18sp"
@@ -68,6 +75,8 @@
         <TextView
             android:layout_width="367dp"
             android:layout_height="wrap_content"
+            android:background="@color/btnAyni"
+            android:textColor="@color/white"
             android:text="Muebles"
             android:textAlignment="center"
             android:textSize="18sp"
@@ -82,6 +91,8 @@
         <TextView
             android:layout_width="367dp"
             android:layout_height="wrap_content"
+            android:background="@color/btnAyni"
+            android:textColor="@color/white"
             android:text="Juguetes"
             android:textAlignment="center"
             android:textSize="18sp"
@@ -96,6 +107,8 @@
         <TextView
             android:layout_width="367dp"
             android:layout_height="wrap_content"
+            android:background="@color/btnAyni"
+            android:textColor="@color/white"
             android:text="Joyas para hombre y mujer"
             android:textAlignment="center"
             android:textSize="18sp"

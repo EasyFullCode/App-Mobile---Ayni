@@ -1,5 +1,6 @@
 package com.example.proyectoayni;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -217,7 +219,7 @@ public class PublicarFragment extends Fragment {
                         producto1.setPreferencia_cambio(spinnerCambio.getSelectedItem().toString());
 
                         dbref.push().setValue(producto1);
-                        Toast.makeText(requireContext(), "Producto Registrado", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(requireContext(), "Producto Registrado", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -225,8 +227,17 @@ public class PublicarFragment extends Fragment {
                         Toast.makeText(requireContext(), "ERROR", Toast.LENGTH_SHORT).show();
                     }
                 });
+                AlertDialog.Builder a = new AlertDialog.Builder(requireContext());
+                a.setCancelable(true);
+                a.setIcon(R.drawable.check);
+                a.setTitle("Producto Registrado");
+                a.setPositiveButton("Aceptar", (dialog, which) -> {
+                    Navigation.findNavController(fragmentView).navigate(R.id.nav_intercambios);
+                });
+                a.show();
             }
         });
+
 
         return fragmentView;
     }

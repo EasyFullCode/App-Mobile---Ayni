@@ -42,6 +42,17 @@
         <item>Joyas</item>
     </string-array>
 
+    <string-array name="producto">
+        <item>Monitor</item>
+        <item>Teclado</item>
+    </string-array>
+
+    <string-array name="estadoProducto">
+        <item>Cambio efectuado</item>
+        <item>Aún disponible</item>
+        <item>Aún disponible</item>
+        <item>Aún disponible</item>
+    </string-array>
 
     <string name="facebook_app_id">645821851010344</string>
     <string name="fb_login_protocol_scheme">fb1234</string>

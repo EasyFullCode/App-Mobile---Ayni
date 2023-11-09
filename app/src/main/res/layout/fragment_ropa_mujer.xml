@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_producto"
+    android:background="@drawable/fondo_home"
     tools:context=".RopaMujerFragment">
 
     <LinearLayout
@@ -24,6 +24,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
+            android:background="@color/btnAyni"
+            android:textColor="@color/white"
             android:fontFamily="sans-serif-condensed"
             android:text=" S/60 - Chaqueta Mujer"
             android:textAlignment="center"
@@ -42,6 +44,8 @@
             android:layout_height="23dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
+            android:background="@color/btnAyni"
+            android:textColor="@color/white"
             android:fontFamily="sans-serif-condensed"
             android:text=" S/50 - Polera Mujer"
             android:textAlignment="center"
@@ -59,6 +63,8 @@
             android:layout_height="26dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
+            android:background="@color/btnAyni"
+            android:textColor="@color/white"
             android:fontFamily="sans-serif-condensed"
             android:text=" S/35 - Falda Mujer"
             android:textAlignment="center"

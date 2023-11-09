@@ -89,7 +89,7 @@ public class Producto {
         this.url = url;
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return "Producto{" +
                 "idProducto=" + idProducto +
@@ -101,5 +101,10 @@ public class Producto {
                 ", contacto='" + contacto + '\'' +
                 ", url='" + url + '\'' +
                 '}';
+    }*/
+
+    @Override
+    public String toString() {
+        return titulo;
     }
 }
