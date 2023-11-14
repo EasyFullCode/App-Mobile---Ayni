@@ -32,7 +32,7 @@ public class SlideshowFragment extends Fragment {
         View root = binding.getRoot();
 
         // Obtener los datos del nombre y la foto del usuario desde los argumentos
-       /* Bundle args = getArguments();
+        /*Bundle args = getArguments();
         if (args != null) {
             String name = args.getString("name");
             String photoUrl = args.getString("photoUrl");

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="400dp"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewChatDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="CHATBOT | AYNI"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/btnAyni"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/editTextUserInput"
+        android:layout_width="match_parent"
+        android:layout_marginTop="24dp"
+        android:layout_height="50dp"
+        android:hint="Escribe aquí..."
+        android:inputType="text"
+        android:maxLines="1" />
+
+    <Button
+        android:id="@+id/buttonSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/btnAyni"
+        android:text="Enviar" />
+
+</LinearLayout>

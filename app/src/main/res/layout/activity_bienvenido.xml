@@ -12,7 +12,7 @@
 
         android:layout_width="346dp"
         android:layout_height="78dp"
-        android:layout_marginTop="452dp"
+        android:layout_marginTop="480dp"
         android:text="Gracias por ser parte de Ayni"
         android:textAlignment="center"
         android:textColor="@color/btnAyni"
@@ -27,7 +27,7 @@
         android:id="@+id/textView"
         android:layout_width="315dp"
         android:layout_height="78dp"
-        android:layout_marginTop="552dp"
+        android:layout_marginTop="572dp"
         android:text="Recuerda ingresar con el correo y contraseña registrado. No lo olvides."
         android:textSize="18sp"
         app:layout_constraintBaseline_toBottomOf="parent"
@@ -40,12 +40,12 @@
         android:id="@+id/btnWelcome"
         android:layout_width="268dp"
         android:layout_height="49dp"
-        android:layout_marginTop="632dp"
+        android:layout_marginTop="648dp"
         android:backgroundTint="@color/btnAyni"
         android:text="Entendido"
         app:layout_constraintBaseline_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

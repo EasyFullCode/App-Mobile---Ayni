@@ -3,9 +3,11 @@ package com.example.proyectoayni;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -19,9 +21,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.proyectoayni.databinding.ActivityMenuAyniBinding;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MenuAyni extends AppCompatActivity {
+public class MenuAyni extends AppCompatActivity implements TextToSpeech.OnInitListener{
 
     private static final int PICK_IMAGE_REQUEST = 1;
+    private TextToSpeech textToSpeech;
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMenuAyniBinding binding;
 
@@ -33,12 +36,24 @@ public class MenuAyni extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMenuAyni.toolbar);
+        textToSpeech = new TextToSpeech(this, this);
         binding.appBarMenuAyni.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
                 com.facebook.login.LoginManager.getInstance().logOut();
                 startActivity(new Intent(MenuAyni.this, MainActivity.class));
+            }
+        });
+        binding.appBarMenuAyni.fab2.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+                showChatbotDialog();
+                if (textToSpeech != null) {
+                    textToSpeech.speak("¡Hola!, soy el chatbot de Ayni, ¿En que puedo ayudarte?", TextToSpeech.QUEUE_FLUSH, null, null);
+                }
             }
         });
         DrawerLayout drawer = binding.drawerLayout;
@@ -51,6 +66,11 @@ public class MenuAyni extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu_ayni);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+    }
+
+    private void showChatbotDialog() {
+        ChatbotDialog chatbotDialog = new ChatbotDialog(this);
+        chatbotDialog.show();
     }
 
     @Override
@@ -85,5 +105,24 @@ public class MenuAyni extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    @Override
+    public void onInit(int status) {
+       /* if (status == TextToSpeech.SUCCESS) {
+            // Puedes usar textToSpeech para reproducir mensajes de voz
+            textToSpeech.speak("Bienvenido a la aplicación AYNI", TextToSpeech.QUEUE_FLUSH, null, null);
+        } else {
+            // Manejar errores de inicialización
+            Toast.makeText(this, "Error al inicializar TextToSpeech", Toast.LENGTH_SHORT).show();
+        }*/
+    }
+    @Override
+    protected void onDestroy() {
+        if (textToSpeech != null) {
+            textToSpeech.stop();
+            textToSpeech.shutdown();
+        }
+        super.onDestroy();
     }
 }
