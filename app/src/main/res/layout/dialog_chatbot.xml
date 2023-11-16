@@ -1,30 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="350dp"
-    android:layout_height="400dp"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="8dp">
     <TextView
         android:id="@+id/textViewChatDisplay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="CHATBOT | AYNI"
-        android:textAlignment="center"
         android:fontFamily="sans-serif-condensed"
         android:textColor="@color/btnAyni"
         android:textSize="24sp" />
-
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp">
     <EditText
         android:id="@+id/editTextUserInput"
         android:layout_width="match_parent"
-        android:layout_marginTop="24dp"
         android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:hint="Escribe aquí..."
         android:inputType="text"
         android:maxLines="1" />
-
+    </LinearLayout>
     <Button
         android:id="@+id/buttonSend"
         android:layout_width="wrap_content"

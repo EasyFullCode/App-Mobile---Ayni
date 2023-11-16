@@ -27,6 +27,8 @@ public class MenuAyni extends AppCompatActivity implements TextToSpeech.OnInitLi
     private TextToSpeech textToSpeech;
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMenuAyniBinding binding;
+    private NavController navController;
+    private boolean textToSpeechStarted = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,29 +49,31 @@ public class MenuAyni extends AppCompatActivity implements TextToSpeech.OnInitLi
         });
         binding.appBarMenuAyni.fab2.setOnClickListener(new View.OnClickListener() {
 
-
             @Override
             public void onClick(View v) {
                 showChatbotDialog();
-                if (textToSpeech != null) {
-                    textToSpeech.speak("¡Hola!, soy el chatbot de Ayni, ¿En que puedo ayudarte?", TextToSpeech.QUEUE_FLUSH, null, null);
+                if (!textToSpeechStarted && textToSpeech != null) {
+                    textToSpeech.speak("¡Hola!, soy el chatbot de Ayni, ¿En qué puedo ayudarte?", TextToSpeech.QUEUE_FLUSH, null, null);
+                    textToSpeechStarted = true;
                 }
             }
         });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
 
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu_ayni);
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_intercambios, R.id.nav_perfil, R.id.nav_publicar,R.id.nav_categorias,R.id.nav_acerca)
                 .setOpenableLayout(drawer)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu_ayni);
+        //NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu_ayni);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
     private void showChatbotDialog() {
-        ChatbotDialog chatbotDialog = new ChatbotDialog(this);
+        ChatbotDialog chatbotDialog = new ChatbotDialog(MenuAyni.this, navController);
         chatbotDialog.show();
     }
 
@@ -82,7 +86,7 @@ public class MenuAyni extends AppCompatActivity implements TextToSpeech.OnInitLi
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu_ayni);
+        //NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu_ayni);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
