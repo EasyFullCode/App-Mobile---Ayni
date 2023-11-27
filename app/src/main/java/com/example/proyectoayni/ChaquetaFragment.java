@@ -1,5 +1,7 @@
 package com.example.proyectoayni;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +13,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.example.proyectoayni.databinding.FragmentChaquetaBinding;
+import com.example.proyectoayni.databinding.FragmentGorraBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +27,7 @@ public class ChaquetaFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private FragmentChaquetaBinding binding;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -62,8 +69,30 @@ public class ChaquetaFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chaqueta, container, false);
+        binding = FragmentChaquetaBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+        Button whatsappButton = root.findViewById(R.id.whatsappButton);
+        whatsappButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Número de teléfono al que se enviará el mensaje por WhatsApp
+                String phoneNumber = "931561797";
+
+                // Mensaje opcional a enviar
+                String message = "Hola, vi este articulo en Ayni, me gustaria más información...";
+
+                try {
+                    // Crear la intención para abrir WhatsApp
+                    String url = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + message;
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(intent);
+                } catch (Exception e) {
+                    // Manejar excepciones si WhatsApp no está instalado en el dispositivo
+                    Toast.makeText(getContext(), "WhatsApp no está instalado en este dispositivo", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        return root;
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

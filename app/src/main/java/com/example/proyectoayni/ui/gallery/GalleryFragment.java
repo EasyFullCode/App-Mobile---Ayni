@@ -39,7 +39,7 @@ public class GalleryFragment extends Fragment {
                 String phoneNumber = "931561797";
 
                 // Mensaje opcional a enviar
-                String message = "Hola desde mi app";
+                String message = "Hola, vi este articulo en Ayni, me gustaria más información...";
 
                 try {
                     // Crear la intención para abrir WhatsApp

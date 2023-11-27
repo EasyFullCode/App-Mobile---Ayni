@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         botonMainIngreso = findViewById(R.id.btnMainIngreso);
 
         mCallbackManager = CallbackManager.Factory.create();
-        //LoginButton loginButton = findViewById(R.id.login_button);
-       // loginButton.setReadPermissions("email", "public_profile");
+        LoginButton loginButton = findViewById(R.id.login_button);
+       loginButton.setReadPermissions("email", "public_profile");
         botonMainIngreso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       /* loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
+       loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 Log.d(TAG, "facebook:onSuccess:" + loginResult);
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             public void onError(FacebookException error) {
                 Log.d(TAG, "facebook:onError", error);
             }
-        });*/
+        });
         // [END initialize_fblogin]
     }
 
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     // [END on_activity_result]
 
     // [START auth_with_facebook]
-   /* private void handleFacebookAccessToken(AccessToken token) {
+   private void handleFacebookAccessToken(AccessToken token) {
         Log.d(TAG, "handleFacebookAccessToken:" + token);
 
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());

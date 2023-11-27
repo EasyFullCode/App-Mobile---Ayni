@@ -15,19 +15,19 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.proyectoayni.databinding.FragmentAudiGamerBinding;
-import com.example.proyectoayni.databinding.FragmentAudifonosBinding;
+import com.example.proyectoayni.databinding.FragmentChaquetaBinding;
+import com.example.proyectoayni.databinding.FragmentChicagoBinding;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link AudiGamerFragment#newInstance} factory method to
+ * Use the {@link ChicagoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AudiGamerFragment extends Fragment {
+public class ChicagoFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private FragmentAudiGamerBinding binding;
+    private FragmentChicagoBinding binding;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -35,7 +35,7 @@ public class AudiGamerFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public AudiGamerFragment() {
+    public ChicagoFragment() {
         // Required empty public constructor
     }
 
@@ -45,11 +45,11 @@ public class AudiGamerFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment AudiGamerFragment.
+     * @return A new instance of fragment ChicagoFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AudiGamerFragment newInstance(String param1, String param2) {
-        AudiGamerFragment fragment = new AudiGamerFragment();
+    public static ChicagoFragment newInstance(String param1, String param2) {
+        ChicagoFragment fragment = new ChicagoFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -69,7 +69,7 @@ public class AudiGamerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentAudiGamerBinding.inflate(inflater, container, false);
+        binding = FragmentChicagoBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         Button whatsappButton = root.findViewById(R.id.whatsappButton);
         whatsappButton.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +102,7 @@ public class AudiGamerFragment extends Fragment {
         botonVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.nav_electronico);
+                Navigation.findNavController(v).navigate(R.id.ropaHombreFragment);
             }
         });
     }

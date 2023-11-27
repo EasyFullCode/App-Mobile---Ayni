@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="CHATBOT | AYNI"
-        android:fontFamily="sans-serif-condensed"
+        android:fontFamily="sans-serif-smallcaps"
         android:textColor="@color/btnAyni"
         android:textSize="24sp" />
     </LinearLayout>
@@ -24,7 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginBottom="8dp">
+            android:background="#F1EDED"
+            android:layout_marginBottom="14dp">
     <EditText
         android:id="@+id/editTextUserInput"
         android:layout_width="match_parent"

@@ -123,6 +123,9 @@
         <action
             android:id="@+id/action_ropaHombreFragment_to_gorraFragment"
             app:destination="@id/gorraFragment" />
+        <action
+            android:id="@+id/action_ropaHombreFragment_to_chicagoFragment"
+            app:destination="@id/chicagoFragment" />
     </fragment>
     <fragment
         android:id="@+id/ropaMujerFragment"
@@ -142,10 +145,23 @@
         android:id="@+id/gorraFragment"
         android:name="com.example.proyectoayni.GorraFragment"
         android:label="Gorra para Varón"
-        tools:layout="@layout/fragment_gorra" />
+        tools:layout="@layout/fragment_gorra" >
+        <action
+            android:id="@+id/action_gorraFragment_to_ropaHombreFragment"
+            app:destination="@id/ropaHombreFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_acerca"
         android:name="com.example.proyectoayni.InfoFragment"
         android:label="¿Quienes Somos?"
         tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/chicagoFragment"
+        android:name="com.example.proyectoayni.ChicagoFragment"
+        android:label="fragment_chicago"
+        tools:layout="@layout/fragment_chicago" >
+        <action
+            android:id="@+id/action_chicagoFragment_to_ropaHombreFragment"
+            app:destination="@id/ropaHombreFragment" />
+    </fragment>
 </navigation>

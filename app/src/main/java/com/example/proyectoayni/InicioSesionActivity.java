@@ -53,7 +53,7 @@ public class InicioSesionActivity extends AppCompatActivity {
         }*/
     }
     public void inicioSesion(View view){
-        mAuth.signInWithEmailAndPassword(LoginEmail.getText().toString(),LoginPassword.getText().toString())
+        mAuth.signInWithEmailAndPassword(LoginEmail.getText().toString().trim(),LoginPassword.getText().toString().trim())
                 .addOnCompleteListener(InicioSesionActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -65,7 +65,7 @@ public class InicioSesionActivity extends AppCompatActivity {
                             startActivity(intent);
 
                         }else {
-                            Toast.makeText(InicioSesionActivity.this, "Authentication failed.",
+                            Toast.makeText(InicioSesionActivity.this, "Authentication failed. Se tiene que registrar",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }

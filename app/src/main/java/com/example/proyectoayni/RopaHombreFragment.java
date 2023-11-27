@@ -64,11 +64,18 @@ public class RopaHombreFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         ImageButton botonGorra = view.findViewById(R.id.btnGorra);
+        ImageButton botonChicago = view.findViewById(R.id.IbtnChicago);
 
         botonGorra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.gorraFragment);
+            }
+        });
+        botonChicago.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.chicagoFragment);
             }
         });
     }
