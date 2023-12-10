@@ -9,8 +9,14 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -20,6 +26,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.proyectoayni.databinding.ActivityMenuAyniBinding;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MenuAyni extends AppCompatActivity implements TextToSpeech.OnInitListener{
 
@@ -28,14 +35,32 @@ public class MenuAyni extends AppCompatActivity implements TextToSpeech.OnInitLi
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMenuAyniBinding binding;
     private NavController navController;
+    private GoogleSignInClient mGoogleSignInClient;
+    private ChatbotDialog chatbotDialog;
+
     private boolean textToSpeechStarted = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         binding = ActivityMenuAyniBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        mGoogleSignInClient = buildGoogleSignInClient();
+
+        if (currentUser == null) {
+            // El usuario no está autenticado, realiza la acción correspondiente
+            // (por ejemplo, redirige a la pantalla de inicio de sesión).
+            Intent intent = new Intent(MenuAyni.this, MainActivity.class);
+            startActivity(intent);
+            finish(); // Cierra la actividad actual para evitar que el usuario retroceda a la pantalla principal
+        }
 
         setSupportActionBar(binding.appBarMenuAyni.toolbar);
         textToSpeech = new TextToSpeech(this, this);
@@ -43,6 +68,26 @@ public class MenuAyni extends AppCompatActivity implements TextToSpeech.OnInitLi
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
+                if (mGoogleSignInClient != null) {
+                    mGoogleSignInClient.signOut().addOnCompleteListener(MenuAyni.this, new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            // Acciones después de cerrar sesión en Google
+                            if (task.isSuccessful()) {
+                                // La sesión de Google se cerró con éxito
+                                // Puedes redirigir al usuario a la pantalla de inicio de sesión o realizar otras acciones necesarias.
+                                startActivity(new Intent(MenuAyni.this, MainActivity.class));
+                            } else {
+                                // Error al cerrar sesión en Google
+                                Toast.makeText(MenuAyni.this, "Error al cerrar sesión en Google", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                } else {
+                    // mGoogleSignInClient es nulo, maneja la situación según tus necesidades
+                    // Puedes mostrar un mensaje de error o realizar otras acciones necesarias.
+                    Toast.makeText(MenuAyni.this, "Error: mGoogleSignInClient es nulo", Toast.LENGTH_SHORT).show();
+                }
                 com.facebook.login.LoginManager.getInstance().logOut();
                 startActivity(new Intent(MenuAyni.this, MainActivity.class));
             }
@@ -72,9 +117,20 @@ public class MenuAyni extends AppCompatActivity implements TextToSpeech.OnInitLi
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
+    private GoogleSignInClient buildGoogleSignInClient() {
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+
+        return GoogleSignIn.getClient(this, gso);
+    }
     private void showChatbotDialog() {
-        ChatbotDialog chatbotDialog = new ChatbotDialog(MenuAyni.this, navController);
-        chatbotDialog.show();
+        if (chatbotDialog == null) {
+            chatbotDialog = new ChatbotDialog(MenuAyni.this, navController);
+        }
+
+        chatbotDialog.show(); // Utiliza la instancia existente
     }
 
     @Override
@@ -127,6 +183,22 @@ public class MenuAyni extends AppCompatActivity implements TextToSpeech.OnInitLi
             textToSpeech.stop();
             textToSpeech.shutdown();
         }
+        if (mGoogleSignInClient != null) {
+            mGoogleSignInClient.signOut();
+        }
         super.onDestroy();
+    }
+    private void mostrarChatbotDialog() {
+        if (chatbotDialog == null) {
+            chatbotDialog = new ChatbotDialog(this, navController);
+        }
+
+        chatbotDialog.showDialog();
+    }
+
+    private void ocultarChatbotDialog() {
+        if (chatbotDialog != null) {
+            chatbotDialog.hideDialog();
+        }
     }
 }

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "684420347539",
+    "firebase_url": "https://proyectoayni-3eb0d-default-rtdb.firebaseio.com",
     "project_id": "proyectoayni-3eb0d",
     "storage_bucket": "proyectoayni-3eb0d.appspot.com"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.example.proyectoayni"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "684420347539-dl6im5d7muce9kpsghhnhod766d575kl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.proyectoayni",
+            "certificate_hash": "6d7412d234ce9d2b6bfb4e6904e80d6ff7c1d269"
+          }
+        },
+        {
+          "client_id": "684420347539-t9ccm8bo916sa35qudjm95obak4lhv7s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyA9z8Wk2vyMM1KXubmpS_1I1yLD8F8IjiU"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "684420347539-t9ccm8bo916sa35qudjm95obak4lhv7s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

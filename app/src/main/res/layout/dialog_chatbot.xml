@@ -1,36 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="350dp"
-    android:layout_height="wrap_content"
+    android:layout_height="420dp"
     android:orientation="vertical"
+    android:background="@drawable/chatbot"
     android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginTop="12dp"
         android:layout_marginBottom="8dp">
-    <TextView
-        android:id="@+id/textViewChatDisplay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="CHATBOT | AYNI"
-        android:fontFamily="sans-serif-smallcaps"
-        android:textColor="@color/btnAyni"
-        android:textSize="24sp" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="CHATBOT | AYNI"
+            android:textAlignment="center"
+            android:textColor="@color/btnAyni"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textViewChatDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/textViewChatbotMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text=""
+            android:textColor="@color/btnAyni"
+            android:textSize="18sp" />
     </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#F1EDED"
+
             android:layout_marginBottom="14dp">
     <EditText
         android:id="@+id/editTextUserInput"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
+        android:paddingLeft="15dp"
+        android:background="@drawable/border_edt"
         android:hint="Escribe aquí..."
         android:inputType="text"
         android:maxLines="1" />
